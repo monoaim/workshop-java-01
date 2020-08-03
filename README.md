@@ -20,3 +20,4 @@
 
 ### List of test cases
 * TC01 => `WriteDataAndReadDataThenBufferShouldEmpty()`
+* TC02 => `WriteDataOnFullBufferShouldOverwriteOldestData()`

@@ -42,4 +42,14 @@ public class CircularBufferTest {
         boolean result = cb.isEmpty();
         assertTrue("Buffer not available", result);
     }
+
+    @Test
+    public void WriteDataOnFullBufferShouldOverwriteOldestData() {
+        for (int i = 0; i < 10; i++) {
+            cb.writeData(String.format("A%d", i));
+        }
+        cb.writeData("B");
+        String result = cb.readData();
+        assertEquals("B", result);
+    }
 }
