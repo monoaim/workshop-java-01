@@ -13,7 +13,7 @@ public class HelloTest {
     @Test
     public void SayHiArayaShouldReturnHelloAraya() {
         Hello h = new Hello();
-        String result = h.sayHi("Araya");
-        assertEquals("Hello Araya", result);
+        String result = h.sayHi("arayaS");
+        assertEquals("Hello ArayaS", result);
     }
 }

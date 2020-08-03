@@ -7,6 +7,6 @@ public class Hello {
     }
 
     public String sayHi(String str) {
-        return "Hello" + " " + str;
+        return String.format("Hello %s", str.substring(0, 1).toUpperCase() + str.substring(1));
     }
 }
