@@ -17,3 +17,6 @@
 + buffer size = 10 (default)
 + read pointer = 0
 + write pointer = 0
+
+### List of test cases
+* TC01 => `WriteDataAndReadDataThenBufferShouldEmpty()`

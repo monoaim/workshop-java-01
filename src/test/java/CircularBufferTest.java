@@ -34,4 +34,12 @@ public class CircularBufferTest {
         assertEquals("A", cb.readData());
         assertEquals("B", cb.readData());
     }
+
+    @Test
+    public void WriteDataAndReadDataThenBufferShouldEmpty() {
+        cb.writeData("B");
+        assertEquals("B", cb.readData());
+        boolean result = cb.isEmpty();
+        assertTrue("Buffer not available", result);
+    }
 }
