@@ -68,4 +68,10 @@ public class CircularBufferTest {
             throws Exception {
         cb = new CircularBuffer(-1);
     }
+
+    @Test
+    public void EmptyBufferShouldReturnNull() {
+        String result = cb.readData();
+        assertNull(result);
+    }
 }
