@@ -62,4 +62,10 @@ public class CircularBufferTest {
         int result = cb.getSize();
         assertEquals(30, result);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateNewBufferWithNegativeSizeShouldThrowIllegalArgumentException()
+            throws Exception {
+        cb = new CircularBuffer(-1);
+    }
 }
