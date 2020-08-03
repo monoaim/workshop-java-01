@@ -52,4 +52,14 @@ public class CircularBufferTest {
         String result = cb.readData();
         assertEquals("B", result);
     }
+
+    @Test
+    public void CreateNewBufferWithSize30Should30() throws IllegalArgumentException {
+        cb = new CircularBuffer(30);
+        for (int i = 0; i < 30; i++) {
+            cb.writeData(String.format("A%d", i));
+        }
+        int result = cb.getSize();
+        assertEquals(30, result);
+    }
 }
