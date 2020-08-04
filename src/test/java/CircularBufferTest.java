@@ -13,13 +13,13 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void CreateNewBufferShouldEmpty() {
+    public void createNewBufferShouldEmpty() {
         boolean result = cb.isEmpty();
         assertTrue("Buffer not available", result);
     }
 
     @Test
-    public void CreateNewBufferWithDefaultSizeShould10() {
+    public void createNewBufferWithDefaultSizeShould10() {
         for (int i = 0; i < 10; i++) {
             cb.writeData(String.format("A%d", i));
         }
@@ -28,7 +28,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void WriteAtoBufferShouldReadA() {
+    public void writeABtoBufferShouldReadAB() {
         cb.writeData("A");
         cb.writeData("B");
         assertEquals("A", cb.readData());
@@ -36,7 +36,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void WriteDataAndReadDataThenBufferShouldEmpty() {
+    public void writeDataAndReadDataThenBufferShouldEmpty() {
         cb.writeData("B");
         assertEquals("B", cb.readData());
         boolean result = cb.isEmpty();
@@ -44,7 +44,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void WriteDataOnFullBufferShouldOverwriteOldestData() {
+    public void writeDataOnFullBufferShouldOverwriteOldestData() {
         for (int i = 0; i < 10; i++) {
             cb.writeData(String.format("A%d", i));
         }
@@ -54,7 +54,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void CreateNewBufferWithSize30Should30() throws IllegalArgumentException {
+    public void createNewBufferWithSize30Should30() throws IllegalArgumentException {
         cb = new CircularBuffer(30);
         for (int i = 0; i < 30; i++) {
             cb.writeData(String.format("A%d", i));
@@ -64,13 +64,12 @@ public class CircularBufferTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void CreateNewBufferWithNegativeSizeShouldThrowIllegalArgumentException()
-            throws Exception {
+    public void createNewBufferWithNegativeSizeShouldThrowIllegalArgumentException() {
         cb = new CircularBuffer(-1);
     }
 
     @Test
-    public void EmptyBufferShouldReturnNull() {
+    public void emptyBufferShouldReturnNull() {
         String result = cb.readData();
         assertNull(result);
     }

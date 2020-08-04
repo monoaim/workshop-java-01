@@ -4,10 +4,10 @@ public class CircularBuffer {
 
     private static final int DEFAULT_BUFFER_SIZE = 10;
     private int readPointer, writePointer = 0;
-    private String[] buffer;
+    private final String[] buffer;
 
     public CircularBuffer() {
-        this.buffer = new String[DEFAULT_BUFFER_SIZE];
+        this(DEFAULT_BUFFER_SIZE);
     }
 
     public CircularBuffer(int bufferSize) throws IllegalArgumentException {
@@ -26,7 +26,7 @@ public class CircularBuffer {
     }
 
     public boolean isFull() {
-        return this.writePointer - this.readPointer >= this.buffer.length;
+        return this.writePointer >= this.buffer.length;
     }
 
     public void writeData(String data) {
